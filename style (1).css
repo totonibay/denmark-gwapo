@@ -1,0 +1,363 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f8f7;
+    color: #17212f;
+}
+
+.header {
+    background: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px #00000010;
+}
+
+.header h2 {
+    color: #079e95;
+    font-size: 22px;
+}
+
+button {
+    background: #0aa99f;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #087f79;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: #e0f6f1;
+    padding: 20px 12px;
+    flex-shrink: 0;
+}
+
+.sidebar h3 {
+    color: #66817b;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.sidebar button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    text-align: left;
+    background: transparent;
+    color: #263b38;
+    padding: 13px;
+}
+
+.sidebar button:hover {
+    background: #bfece2;
+}
+
+.content {
+    flex: 1;
+    padding: 25px;
+    min-width: 0;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+h1, h2 {
+    font-size: 24px;
+}
+
+.company-filter {
+    margin: 20px 0;
+}
+
+select,
+input {
+    padding: 11px;
+    border: 1px solid #d9e5e1;
+    border-radius: 7px;
+    margin: 5px 0;
+    background: white;
+    max-width: 100%;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #e0ebe7;
+    box-shadow: 0 4px 15px #00000005;
+}
+
+.card h3 {
+    font-size: 14px;
+    color: #61716d;
+}
+
+.card h1 {
+    font-size: 32px;
+}
+
+.present {
+    border-top: 4px solid #0aa99f;
+}
+
+.absent {
+    border-top: 4px solid #e45c60;
+}
+
+.leave {
+    border-top: 4px solid #f59b35;
+}
+
+.total {
+    border-top: 4px solid #6384e8;
+}
+
+.company-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.company-row {
+    padding: 12px 0;
+    border-bottom: 1px solid #edf1ef;
+}
+
+.company-row:last-child {
+    border-bottom: none;
+}
+
+.company-row span {
+    font-weight: bold;
+}
+
+.add-btn {
+    margin-bottom: 12px;
+}
+
+#searchInput {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+th {
+    background: #e5f6f1;
+    color: #45625c;
+    font-size: 12px;
+    text-align: left;
+}
+
+th, td {
+    padding: 13px;
+    border-bottom: 1px solid #edf1ef;
+}
+
+td {
+    font-size: 13px;
+}
+
+.status-select {
+    font-weight: bold;
+}
+
+.status-Present {
+    color: #07877d;
+}
+
+.status-Absent {
+    color: #d34d52;
+}
+
+.status-On-Leave {
+    color: #bd801b;
+}
+
+.edit-btn {
+    background: #3975dc;
+    margin: 2px;
+}
+
+.delete-btn {
+    background: #dc4545;
+    margin: 2px;
+}
+
+.empty-message {
+    display: none;
+    text-align: center;
+    background: white;
+    padding: 35px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.empty-message button {
+    margin-top: 10px;
+}
+
+/* Employee form */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #00000080;
+    z-index: 100;
+    padding: 15px;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 14px;
+    margin: auto;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.modal-content input,
+.modal-content select {
+    display: block;
+    width: 100%;
+    margin: 7px 0;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    flex: 1;
+}
+
+.cancel-btn {
+    background: #788681;
+}
+
+/* Mobile screen */
+
+@media (max-width: 900px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        padding: 8px;
+    }
+
+    .sidebar h3 {
+        display: none;
+    }
+
+    .sidebar button {
+        width: auto;
+        white-space: nowrap;
+        margin: 3px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .header {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .header h2 {
+        font-size: 16px;
+    }
+
+    .header button {
+        font-size: 11px;
+        padding: 9px;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card h3 {
+        font-size: 12px;
+    }
+
+    .card h1 {
+        font-size: 26px;
+    }
+
+    .content h1 {
+        font-size: 22px;
+    }
+
+    .modal-content {
+        padding: 18px;
+    }
+}
